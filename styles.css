@@ -444,6 +444,19 @@ h3 {
   word-break: break-all;
 }
 
+.download-btn {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 231, 199, 0.35);
+  background: linear-gradient(135deg, var(--mint), var(--cyan));
+  color: #081118;
+  font-weight: 700;
+}
+
 .delivery {
   padding-bottom: 72px;
 }

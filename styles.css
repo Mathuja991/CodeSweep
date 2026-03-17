@@ -396,6 +396,27 @@ h3 {
   margin-top: 0;
 }
 
+.language-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.language-pill {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(127, 231, 199, 0.35);
+  background: linear-gradient(180deg, rgba(127, 231, 199, 0.12), rgba(103, 214, 244, 0.08));
+  color: #eaf7f2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-align: center;
+  padding: 10px 12px;
+}
+
 .delivery {
   padding-bottom: 72px;
 }

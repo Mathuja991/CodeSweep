@@ -100,7 +100,8 @@ button {
 .brand strong,
 .delivery-title {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  line-height: 1.05;
 }
 
 .brand small {

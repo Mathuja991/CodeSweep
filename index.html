@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeSweep | Showcase</title>
+    <meta
+      name="description"
+      content="Static showcase website for the CodeSweep distributed lab file-governance platform."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="shell site-header">
+      <div class="panel nav-bar">
+        <a class="brand" href="#top">
+          <span class="brand-mark">CS</span>
+          <span>
+            <strong>CodeSweep</strong>
+            <small>Static showcase</small>
+          </span>
+        </a>
+
+        <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false">
+          Menu
+        </button>
+
+        <nav id="site-nav" class="site-nav">
+          <a href="#system">System</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#surfaces">Interfaces</a>
+          <a class="nav-cta" href="#delivery">Deployment</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="top" class="shell hero">
+        <div>
+          <p class="eyebrow">Industry-style project website</p>
+          <h1>A proper product showcase for your distributed lab file-governance system.</h1>
+          <p class="lead">
+            CodeSweep is presented here as a real platform: centralized scan dispatch,
+            quarantine-first deletion, verification workflows, agent visibility, and
+            audit-oriented operations across shared lab machines.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#system">Explore the architecture</a>
+            <a class="button secondary" href="#surfaces">View the interfaces</a>
+          </div>
+        </div>
+
+        <section class="panel metrics" aria-labelledby="metrics-title">
+          <div class="metrics-head">
+            <div>
+              <p class="eyebrow">Live metrics</p>
+              <h2 id="metrics-title">Showcase snapshot</h2>
+            </div>
+            <span class="status-pill">static</span>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <p>Supported languages</p>
+              <strong data-stat="supportedLanguages">14+</strong>
+            </article>
+            <article class="stat-card">
+              <p>Mapped seats per lab</p>
+              <strong data-stat="mappedSeats">100</strong>
+            </article>
+            <article class="stat-card">
+              <p>Core platform modules</p>
+              <strong data-stat="coreModules">4</strong>
+            </article>
+            <article class="stat-card">
+              <p>Workflow stages</p>
+              <strong data-stat="verifiedWorkflow">5</strong>
+            </article>
+          </div>
+
+          <p class="timestamp" id="generated-at">refreshed locally</p>
+        </section>
+      </section>
+
+      <section id="system" class="shell section">
+        <p class="eyebrow">System modules</p>
+        <h2>The project is now a plain static site, with no framework build step.</h2>
+        <p class="section-copy">
+          This version is meant for simple deployment: HTML, CSS, and JavaScript only,
+          while keeping the same product story for the CodeSweep platform.
+        </p>
+
+        <div class="module-layout">
+          <div id="module-list" class="stacked-buttons" role="tablist" aria-label="System modules"></div>
+          <article class="panel detail-card">
+            <p class="eyebrow" id="module-tag">frontend</p>
+            <h3 id="module-title">Admin dashboard and verification UI</h3>
+            <p id="module-summary">
+              Task creation, lab-seat visibility, pending file review, and audit-oriented
+              human approval.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="shell section">
+        <p class="eyebrow">Operational workflow</p>
+        <h2>Verification-first remains the trust model of the whole product.</h2>
+        <div id="workflow-list" class="workflow-grid"></div>
+      </section>
+
+      <section id="surfaces" class="shell section">
+        <p class="eyebrow">Interface surfaces</p>
+        <h2>The site exposes the real UI layers behind the platform.</h2>
+
+        <div id="surface-tabs" class="pill-row" role="tablist" aria-label="Surface tabs"></div>
+
+        <div class="surface-layout">
+          <article class="panel detail-card">
+            <p class="eyebrow" id="surface-name">Dashboard</p>
+            <h3 id="surface-headline">A control surface built for administrators, not just a demo form.</h3>
+            <div id="surface-points" class="point-list"></div>
+          </article>
+
+          <article class="panel detail-card">
+            <p class="eyebrow">Deployment notes</p>
+            <div class="point-list">
+              <div class="point-item">Deploy as a static site from the <strong>website</strong> folder.</div>
+              <div class="point-item">No framework preset or build command is required.</div>
+              <div class="point-item">Static assets are served directly from <strong>index.html</strong>, <strong>styles.css</strong>, and <strong>script.js</strong>.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="delivery" class="shell section delivery">
+        <div class="panel delivery-card">
+          <div>
+            <p class="delivery-title">CodeSweep</p>
+            <p class="delivery-copy">
+              If deployment fails again, the issue should be repository or Vercel settings,
+              not the site framework. This version has no Node.js build dependency.
+            </p>
+          </div>
+          <div class="delivery-badge">Deployable static website</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

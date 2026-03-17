@@ -4,28 +4,28 @@ const modules = [
     tag: "frontend",
     title: "Admin dashboard and verification UI",
     summary:
-      "Task creation, lab-seat visibility, pending file review, and audit-oriented human approval."
+      "Submits scan tasks, tracks mapped lab seats, reviews pending files, and records approval actions."
   },
   {
     id: "backend",
     tag: "backend",
     title: "TCP master and orchestration",
     summary:
-      "Dispatches scan instructions, tracks heartbeats, collects results, and queues delete commands when required."
+      "Dispatches scan instructions, tracks heartbeat status, stores results, and issues or queues delete commands."
   },
   {
     id: "agent",
     tag: "client-agent",
     title: "Distributed scanning agents",
     summary:
-      "Scan directories, identify code files, quarantine candidates, and delete only after an approved action."
+      "Scan configured directories, detect language signatures, quarantine candidate files, and report outcomes."
   },
   {
     id: "shared",
     tag: "shared",
     title: "Persistence and shared schemas",
     summary:
-      "Stores pending files, deletion records, and runtime state across services."
+      "Maintains agent states, pending verification queue, queued commands, and deletion reports."
   }
 ];
 
@@ -33,48 +33,51 @@ const surfaces = [
   {
     id: "dashboard",
     title: "Dashboard",
-    headline: "A control surface built for administrators, not just a demo form.",
+    headline: "Dispatch scan tasks with target languages, absolute path, and optional date filters.",
     points: [
-      "Seat-map style lab monitoring",
-      "Scan path, language, and date filters",
-      "Agent and pending-file visibility"
+      "Task ID preview and scan submission",
+      "Mapped lab layout with online/offline visibility",
+      "Pending file count and quick status panels"
     ]
   },
   {
     id: "verification",
     title: "Verification",
-    headline: "A review layer that keeps destructive actions explicitly human-gated.",
+    headline: "Review pending files and keep deletion explicitly human-approved.",
     points: [
-      "Bulk approve and reject actions",
-      "Searchable pending file queue",
-      "Audit log visibility"
+      "Search and filter pending records",
+      "Bulk approve and reject operations",
+      "Audit log table with action timeline"
     ]
   },
   {
-    id: "delivery",
-    title: "Orchestration",
-    headline: "A platform story for dispatch, fallback queuing, and deletion confirmation.",
+    id: "api",
+    title: "Backend API",
+    headline: "Flask endpoints support task dispatch, previews, approvals, and reporting.",
     points: [
-      "Heartbeat-aware online status",
-      "Live dispatch and queued fallback",
-      "Deletion reporting"
+      "/submit-instruction, /clients-status, /files-preview",
+      "/approve-deletion, /reject-deletion, /audit-logs",
+      "Queue fallback when agents are temporarily unavailable"
     ]
   }
 ];
 
 const workflow = [
-  "Create a scan task with target languages and an absolute path.",
-  "Dispatch the instruction to active agents.",
-  "Scan, classify, and quarantine candidate files.",
-  "Review the verification queue in the admin UI.",
-  "Approve, reject, or queue deletion with audit visibility."
+  "Admin selects target language(s), scan path, and optional date range.",
+  "Frontend creates a scan_task payload and dispatches to active agents.",
+  "Agent scans files and detects code type using pattern rules.",
+  "Matching files are quarantined before any delete action.",
+  "Pending records are stored for verification review.",
+  "Admin approves or rejects selected records in the verification page.",
+  "Approved deletions are dispatched live or queued for next heartbeat.",
+  "Agents report deletion outcomes and audit history is updated."
 ];
 
 const stats = {
-  supportedLanguages: "14+",
-  mappedSeats: "100",
+  supportedLanguages: "14",
+  mappedSeats: "200",
   coreModules: "4",
-  verifiedWorkflow: "5"
+  verifiedWorkflow: "8"
 };
 
 function renderModules() {

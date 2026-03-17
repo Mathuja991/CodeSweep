@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeSweep | Showcase</title>
+    <title>CodeSweep | Project Website</title>
     <meta
       name="description"
-      content="Static showcase website for the CodeSweep distributed lab file-governance platform."
+      content="CodeSweep is an agent-based platform for scanning, quarantining, verifying, and deleting unauthorized code files across lab machines."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +23,7 @@
           <span class="brand-mark">CS</span>
           <span>
             <strong>CodeSweep</strong>
-            <small>Static showcase</small>
+            <small>Distributed governance</small>
           </span>
         </a>
 
@@ -35,7 +35,7 @@
           <a href="#system">System</a>
           <a href="#workflow">Workflow</a>
           <a href="#surfaces">Interfaces</a>
-          <a class="nav-cta" href="#delivery">Deployment</a>
+          <a class="nav-cta" href="#delivery">Run</a>
         </nav>
       </div>
     </header>
@@ -43,44 +43,44 @@
     <main>
       <section id="top" class="shell hero">
         <div>
-          <p class="eyebrow">Industry-style project website</p>
-          <h1>A proper product showcase for your distributed lab file-governance system.</h1>
+          <p class="eyebrow">Project website</p>
+          <h1>CodeSweep centralizes scan, quarantine, and verified deletion across computer labs.</h1>
           <p class="lead">
-            CodeSweep is presented here as a real platform: centralized scan dispatch,
-            quarantine-first deletion, verification workflows, agent visibility, and
-            audit-oriented operations across shared lab machines.
+            The platform combines a TCP master backend, Flask admin UI, distributed client agents,
+            and shared persistence so administrators can review and approve destructive actions
+            before they execute.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#system">Explore the architecture</a>
-            <a class="button secondary" href="#surfaces">View the interfaces</a>
+            <a class="button primary" href="#system">Explore architecture</a>
+            <a class="button secondary" href="#surfaces">View UI surfaces</a>
           </div>
         </div>
 
         <section class="panel metrics" aria-labelledby="metrics-title">
           <div class="metrics-head">
             <div>
-              <p class="eyebrow">Live metrics</p>
-              <h2 id="metrics-title">Showcase snapshot</h2>
+              <p class="eyebrow">Project metrics</p>
+              <h2 id="metrics-title">System snapshot</h2>
             </div>
-            <span class="status-pill">static</span>
+            <span class="status-pill">static site</span>
           </div>
 
           <div class="stats-grid">
             <article class="stat-card">
               <p>Supported languages</p>
-              <strong data-stat="supportedLanguages">14+</strong>
+              <strong data-stat="supportedLanguages">14</strong>
             </article>
             <article class="stat-card">
-              <p>Mapped seats per lab</p>
-              <strong data-stat="mappedSeats">100</strong>
+              <p>Mapped lab seats</p>
+              <strong data-stat="mappedSeats">200</strong>
             </article>
             <article class="stat-card">
-              <p>Core platform modules</p>
+              <p>Core modules</p>
               <strong data-stat="coreModules">4</strong>
             </article>
             <article class="stat-card">
               <p>Workflow stages</p>
-              <strong data-stat="verifiedWorkflow">5</strong>
+              <strong data-stat="verifiedWorkflow">8</strong>
             </article>
           </div>
 
@@ -90,10 +90,10 @@
 
       <section id="system" class="shell section">
         <p class="eyebrow">System modules</p>
-        <h2>The project is now a plain static site, with no framework build step.</h2>
+        <h2>Four services coordinate detection and human-approved deletion.</h2>
         <p class="section-copy">
-          This version is meant for simple deployment: HTML, CSS, and JavaScript only,
-          while keeping the same product story for the CodeSweep platform.
+          This website content mirrors the actual project behavior: scan-task dispatch, queued fallback,
+          quarantine-first handling, verification, and audited delete outcomes.
         </p>
 
         <div class="module-layout">
@@ -102,8 +102,7 @@
             <p class="eyebrow" id="module-tag">frontend</p>
             <h3 id="module-title">Admin dashboard and verification UI</h3>
             <p id="module-summary">
-              Task creation, lab-seat visibility, pending file review, and audit-oriented
-              human approval.
+              Task creation, lab-seat status visibility, pending file review, and audit timeline access.
             </p>
           </article>
         </div>
@@ -111,29 +110,29 @@
 
       <section id="workflow" class="shell section">
         <p class="eyebrow">Operational workflow</p>
-        <h2>Verification-first remains the trust model of the whole product.</h2>
+        <h2>Verification-first remains the platform trust boundary.</h2>
         <div id="workflow-list" class="workflow-grid"></div>
       </section>
 
       <section id="surfaces" class="shell section">
         <p class="eyebrow">Interface surfaces</p>
-        <h2>The site exposes the real UI layers behind the platform.</h2>
+        <h2>Dashboard, verification, and API endpoints work as one flow.</h2>
 
         <div id="surface-tabs" class="pill-row" role="tablist" aria-label="Surface tabs"></div>
 
         <div class="surface-layout">
           <article class="panel detail-card">
             <p class="eyebrow" id="surface-name">Dashboard</p>
-            <h3 id="surface-headline">A control surface built for administrators, not just a demo form.</h3>
+            <h3 id="surface-headline">Dispatch scan tasks with language, path, and date constraints.</h3>
             <div id="surface-points" class="point-list"></div>
           </article>
 
           <article class="panel detail-card">
             <p class="eyebrow">Deployment notes</p>
             <div class="point-list">
-              <div class="point-item">Deploy as a static site from the <strong>website</strong> folder.</div>
-              <div class="point-item">No framework preset or build command is required.</div>
-              <div class="point-item">Static assets are served directly from <strong>index.html</strong>, <strong>styles.css</strong>, and <strong>script.js</strong>.</div>
+              <div class="point-item">Run the full platform with <strong>docker compose up --build</strong> from <strong>project/</strong>.</div>
+              <div class="point-item">Frontend UI default: <strong>http://localhost:5001/</strong>.</div>
+              <div class="point-item">This website deploys as static files from <strong>website/</strong>.</div>
             </div>
           </article>
         </div>
@@ -144,11 +143,11 @@
           <div>
             <p class="delivery-title">CodeSweep</p>
             <p class="delivery-copy">
-              If deployment fails again, the issue should be repository or Vercel settings,
-              not the site framework. This version has no Node.js build dependency.
+              The static site documents the real system: centralized scan orchestration,
+              quarantine-first handling, admin verification, and audit-backed deletion lifecycle.
             </p>
           </div>
-          <div class="delivery-badge">Deployable static website</div>
+          <div class="delivery-badge">Project-aligned website</div>
         </div>
       </section>
     </main>

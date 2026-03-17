@@ -4,73 +4,73 @@ const modules = [
     tag: "frontend",
     title: "Admin dashboard and verification UI",
     summary:
-      "Submits scan tasks, tracks mapped lab seats, reviews pending files, and records approval actions."
+      "Form-based task submission, lab machine visibility, pending file verification, and audit monitoring."
   },
   {
     id: "backend",
     tag: "backend",
     title: "TCP master and orchestration",
     summary:
-      "Dispatches scan instructions, tracks heartbeat status, stores results, and issues or queues delete commands."
+      "Converts admin requests into structured scan tasks and dispatches them to connected client agents."
   },
   {
     id: "agent",
     tag: "client-agent",
     title: "Distributed scanning agents",
     summary:
-      "Scan configured directories, detect language signatures, quarantine candidate files, and report outcomes."
+      "Scans configured directories, detects target-language files, quarantines matches, and executes approved deletions."
   },
   {
     id: "shared",
     tag: "shared",
     title: "Persistence and shared schemas",
     summary:
-      "Maintains agent states, pending verification queue, queued commands, and deletion reports."
+      "Stores agent status, detected file records, verification queue, and deletion report history."
   }
 ];
 
 const surfaces = [
   {
-    id: "dashboard",
-    title: "Dashboard",
-    headline: "Dispatch scan tasks with target languages, absolute path, and optional date filters.",
+    id: "backend_stack",
+    title: "Backend Stack",
+    headline: "Python, Flask, SQLAlchemy, and SQLite drive task processing and verification APIs.",
     points: [
-      "Task ID preview and scan submission",
-      "Mapped lab layout with online/offline visibility",
-      "Pending file count and quick status panels"
+      "Python for orchestration and agent logic",
+      "Flask for admin UI endpoints and control APIs",
+      "SQLAlchemy + SQLite for persistence"
     ]
   },
   {
-    id: "verification",
-    title: "Verification",
-    headline: "Review pending files and keep deletion explicitly human-approved.",
+    id: "frontend_stack",
+    title: "Frontend Stack",
+    headline: "Jinja2 templates with Bootstrap components provide a responsive admin dashboard.",
     points: [
-      "Search and filter pending records",
-      "Bulk approve and reject operations",
-      "Audit log table with action timeline"
+      "HTML, CSS, and JavaScript interface",
+      "Jinja2-rendered Flask templates",
+      "Bootstrap 5 and Font Awesome"
     ]
   },
   {
-    id: "api",
-    title: "Backend API",
-    headline: "Flask endpoints support task dispatch, previews, approvals, and reporting.",
+    id: "ops_stack",
+    title: "Networking and Deployment",
+    headline: "TCP socket communication and containerized execution support distributed lab operation.",
     points: [
-      "/submit-instruction, /clients-status, /files-preview",
-      "/approve-deletion, /reject-deletion, /audit-logs",
-      "Queue fallback when agents are temporarily unavailable"
+      "TCP sockets between master and client agents",
+      "Docker and Docker Compose runtime",
+      "Cross-platform deployment support"
     ]
   }
 ];
 
 const workflow = [
-  "Admin selects target language(s), scan path, and optional date range.",
-  "Frontend creates a scan_task payload and dispatches to active agents.",
-  "Agent scans files and detects code type using pattern rules.",
-  "Matching files are quarantined before any delete action.",
-  "Pending records are stored for verification review.",
-  "Admin approves or rejects selected records in the verification page.",
-  "Approved deletions are dispatched live or queued for next heartbeat.",
-  "Agents report deletion outcomes and audit history is updated."
+  "Administrator submits target languages, scan directories, and optional filters.",
+  "Backend transforms the request into a structured scan task.",
+  "Master server dispatches scan tasks to connected client agents.",
+  "Agents detect matching files and move them to quarantine first.",
+  "Detected file records are returned and shown for human verification.",
+  "Administrator approves, modifies, or rejects deletion candidates.",
+  "Approved files are permanently deleted by agents.",
+  "Status updates and deletion reports are stored for audit monitoring."
 ];
 
 const stats = {

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeSweep | Project Website</title>
+    <title>Agent-Based System for Centralised Files Deletion in Computer Labs</title>
     <meta
       name="description"
-      content="CodeSweep is an agent-based platform for scanning, quarantining, verifying, and deleting unauthorized code files across lab machines."
+      content="Project documentation website for the Agent-Based System for Centralised Files Deletion in Computer Labs."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +23,7 @@
           <span class="brand-mark">CS</span>
           <span>
             <strong>CodeSweep</strong>
-            <small>Distributed governance</small>
+            <small>Project documentation</small>
           </span>
         </a>
 
@@ -32,11 +32,13 @@
         </button>
 
         <nav id="site-nav" class="site-nav">
-          <a href="#system">System</a>
+          <a href="#abstract">Abstract</a>
+          <a href="#system">Architecture</a>
           <a href="#workflow">Workflow</a>
           <a href="#languages">Languages</a>
-          <a href="#surfaces">Interfaces</a>
-          <a class="nav-cta" href="#delivery">Run</a>
+          <a href="#surfaces">Technologies</a>
+          <a href="#team">Team</a>
+          <a class="nav-cta" href="#delivery">Links</a>
         </nav>
       </div>
     </header>
@@ -44,16 +46,16 @@
     <main>
       <section id="top" class="shell hero">
         <div>
-          <p class="eyebrow">Project website</p>
-          <h1>CodeSweep centralizes scan, quarantine, and verified deletion across computer labs.</h1>
+          <p class="eyebrow">Project title</p>
+          <h1>Agent-Based System for Centralised Files Deletion in Computer Labs</h1>
           <p class="lead">
-            The platform combines a TCP master backend, Flask admin UI, distributed client agents,
-            and shared persistence so administrators can review and approve destructive actions
-            before they execute.
+            This system helps administrators safely remove student source-code files from lab
+            computers before practical exams, using centralized scan-task dispatch, quarantine-first
+            handling, and administrator verification before permanent deletion.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#system">Explore architecture</a>
-            <a class="button secondary" href="#surfaces">View UI surfaces</a>
+            <a class="button primary" href="#abstract">Read abstract</a>
+            <a class="button secondary" href="#system">Explore architecture</a>
           </div>
         </div>
 
@@ -72,7 +74,7 @@
               <strong data-stat="supportedLanguages">14</strong>
             </article>
             <article class="stat-card">
-              <p>Mapped lab seats</p>
+              <p>Lab layout seats</p>
               <strong data-stat="mappedSeats">200</strong>
             </article>
             <article class="stat-card">
@@ -89,12 +91,37 @@
         </section>
       </section>
 
+      <section id="abstract" class="shell section">
+        <p class="eyebrow">Project abstract</p>
+        <h2>Problem Addressed and Solution Approach</h2>
+        <div class="surface-layout">
+          <article class="panel detail-card">
+            <p class="eyebrow">Problem addressed</p>
+            <div class="point-list">
+              <div class="point-item">Computer labs must remove student-generated source files before practical exams to prevent unfair access to prior solutions.</div>
+              <div class="point-item">Exams run at different times while other sessions continue, so only selected language files should be removed per exam context.</div>
+              <div class="point-item">Manual cleanup across many machines is time-consuming, inconsistent, and prone to human error.</div>
+            </div>
+          </article>
+
+          <article class="panel detail-card">
+            <p class="eyebrow">Approach</p>
+            <div class="point-list">
+              <div class="point-item">A master server dispatches structured scan tasks to client agents running on lab machines.</div>
+              <div class="point-item">Agents scan selected directories, detect target-language files, and move matches into quarantine first.</div>
+              <div class="point-item">Administrators review detected files on the dashboard and approve/reject deletion actions.</div>
+              <div class="point-item">Only approved files are permanently deleted, and results are recorded for monitoring and audit trails.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="system" class="shell section">
-        <p class="eyebrow">System modules</p>
-        <h2>Four services coordinate detection and human-approved deletion.</h2>
+        <p class="eyebrow">System architecture</p>
+        <h2>Master-agent design with verification-first deletion control.</h2>
         <p class="section-copy">
-          This website content mirrors the actual project behavior: scan-task dispatch, queued fallback,
-          quarantine-first handling, verification, and audited delete outcomes.
+          The architecture combines a Flask admin interface, TCP master backend, distributed agents,
+          and shared persistence to support controlled and auditable laboratory cleanup workflows.
         </p>
 
         <div class="module-layout">
@@ -103,7 +130,7 @@
             <p class="eyebrow" id="module-tag">frontend</p>
             <h3 id="module-title">Admin dashboard and verification UI</h3>
             <p id="module-summary">
-              Task creation, lab-seat status visibility, pending file review, and audit timeline access.
+              Task creation, lab-seat status monitoring, pending file review, and deletion audit visibility.
             </p>
           </article>
         </div>
@@ -111,7 +138,7 @@
 
       <section id="workflow" class="shell section">
         <p class="eyebrow">Operational workflow</p>
-        <h2>Verification-first remains the platform trust boundary.</h2>
+        <h2>Controlled deletion sequence from scan request to audit report.</h2>
         <div id="workflow-list" class="workflow-grid"></div>
       </section>
 
@@ -131,39 +158,65 @@
       </section>
 
       <section id="surfaces" class="shell section">
-        <p class="eyebrow">Interface surfaces</p>
-        <h2>Dashboard, verification, and API endpoints work as one flow.</h2>
+        <p class="eyebrow">Technologies used</p>
+        <h2>Backend, frontend, networking, and deployment stack.</h2>
 
         <div id="surface-tabs" class="pill-row" role="tablist" aria-label="Surface tabs"></div>
 
         <div class="surface-layout">
           <article class="panel detail-card">
-            <p class="eyebrow" id="surface-name">Dashboard</p>
-            <h3 id="surface-headline">Dispatch scan tasks with language, path, and date constraints.</h3>
+            <p class="eyebrow" id="surface-name">Backend stack</p>
+            <h3 id="surface-headline">Python + Flask services coordinate instruction dispatch and verification APIs.</h3>
             <div id="surface-points" class="point-list"></div>
           </article>
 
           <article class="panel detail-card">
-            <p class="eyebrow">Deployment notes</p>
+            <p class="eyebrow">Safety model</p>
             <div class="point-list">
-              <div class="point-item">Run the full platform with <strong>docker compose up --build</strong> from <strong>project/</strong>.</div>
-              <div class="point-item">Frontend UI default: <strong>http://localhost:5001/</strong>.</div>
-              <div class="point-item">This website deploys as static files from <strong>website/</strong>.</div>
+              <div class="point-item">Files are quarantined first instead of immediate deletion.</div>
+              <div class="point-item">Admins verify and approve deletion candidates manually.</div>
+              <div class="point-item">Actions are tracked through status updates and audit logs.</div>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section id="outcomes" class="shell section">
+        <p class="eyebrow">Outcomes</p>
+        <h2>Expected and Achieved Outcomes</h2>
+        <div class="point-list">
+          <div class="point-item"><strong>Automated laboratory preparation:</strong> Rapidly prepares labs for practical exams by detecting and removing specified source-code files.</div>
+          <div class="point-item"><strong>Reduced administrative workload:</strong> Removes manual multi-machine cleanup and lowers human-error risk.</div>
+          <div class="point-item"><strong>Safe and controlled deletion:</strong> Quarantine and verification gates prevent accidental destructive actions.</div>
+          <div class="point-item"><strong>Centralized monitoring and control:</strong> Dashboard shows detected files from all agents and supports approve/modify/reject actions.</div>
+          <div class="point-item"><strong>Cross-platform scalability:</strong> Supports distributed operation across Windows and Linux lab environments.</div>
+        </div>
+      </section>
+
+      <section id="team" class="shell section">
+        <p class="eyebrow">Team information</p>
+        <h2>Project Contributors</h2>
+        <div class="point-list">
+          <div class="point-item"><strong>Ms. J. Varsha</strong> (2021/CSC/080, varshajeyaraj@gmail.com): Led overall system design and development; implemented backend task processing, agent coordination, DB integration, and orchestration.</div>
+          <div class="point-item"><strong>Mr. K.A.T. Saranga</strong> (2021/CSC/027, tharakasaranga755@gmail.com): Designed and implemented admin UI with HTML/CSS/JS/Jinja2/Bootstrap; contributed to regex validation.</div>
+          <div class="point-item"><strong>Mr. K.G.H.M. Wijesekara</strong> (2021/CSC/030, hasitha.m.wijesekara@gmail.com): Developed dashboard UI features and backend API integration; contributed to regex validation.</div>
+          <div class="point-item"><strong>Ms. S. Kujinsika</strong> (2021/CSC/034, kujinsikasivaneswaran@gmail.com): Performed integration/system testing, validated agent communication and file operations, and supported issue resolution.</div>
+          <div class="point-item"><strong>Ms. P. Mathuja</strong> (2021/CSC/088, mathujaparameshwaran@gmail.com): Developed master-server logic, task distribution mechanisms, and Docker-based deployment setup.</div>
         </div>
       </section>
 
       <section id="delivery" class="shell section delivery">
         <div class="panel delivery-card">
           <div>
-            <p class="delivery-title">CodeSweep</p>
+            <p class="delivery-title">Project Links</p>
             <p class="delivery-copy">
-              The static site documents the real system: centralized scan orchestration,
-              quarantine-first handling, admin verification, and audit-backed deletion lifecycle.
+              Repository:
+              <a href="https://github.com/Agent-Based-Centralised-File-Deletion/project" target="_blank" rel="noopener noreferrer">github.com/Agent-Based-Centralised-File-Deletion/project</a><br />
+              Website:
+              <a href="https://code-sweep.vercel.app/" target="_blank" rel="noopener noreferrer">code-sweep.vercel.app</a>
             </p>
           </div>
-          <div class="delivery-badge">Project-aligned website</div>
+          <div class="delivery-badge">Documentation ready</div>
         </div>
       </section>
     </main>

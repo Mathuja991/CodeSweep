@@ -417,6 +417,33 @@ h3 {
   padding: 10px 12px;
 }
 
+.team-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.team-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.16);
+  padding: 10px 12px;
+  display: grid;
+  gap: 2px;
+}
+
+.team-name {
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.team-mail {
+  color: var(--muted);
+  font-size: 0.88rem;
+  word-break: break-all;
+}
+
 .delivery {
   padding-bottom: 72px;
 }
@@ -470,6 +497,10 @@ h3 {
 
   .stats-grid,
   .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
     grid-template-columns: 1fr;
   }
 
